@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริษัท เซคคันด์ไซท์ จำกัด (Second Sight Co., Ltd.) - IT Consulting & System Integration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F4A261;
+            --primary-hover: #E76F51;
+            --primary-light: #FFF3E8;
+            --secondary: #2B2D42;
+            --text-body: #4A4E69;
+            --text-muted: #8D99AE;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8F9FA;
+            --border-color: #E9ECEF;
+            --shadow-sm: 0 4px 20px rgba(43, 45, 66, 0.05);
+            --shadow-md: 0 10px 30px rgba(43, 45, 66, 0.08);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans Thai', 'Prompt', sans-serif;
+            color: var(--text-body);
+            background-color: var(--bg-white);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Prompt', 'IBM Plex Sans Thai', sans-serif;
+            color: var(--secondary);
+            line-height: 1.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 82px;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 26px;
+            border-radius: 50px;
+            font-family: 'Prompt', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(244, 162, 97, 0.35);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 111, 81, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .btn-sm {
+            padding: 9px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFC 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-body);
+            margin-bottom: 32px;
+            max-width: 92%;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-item h4 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Hero Visual Diagram */
+        .hero-visual {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .diagram-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #E2E8F0;
+        }
+
+        .dots span:first-child { background: var(--primary); }
+
+        .node-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: transform 0.2s;
+        }
+
+        .node-box:hover {
+            transform: translateX(4px);
+            border-color: var(--primary);
+        }
+
+        .node-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--primary-light);
+            color: var(--primary-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .node-info h5 {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 2px;
+        }
+
+        .node-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .status-badge {
+            margin-left: auto;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #2A9D8F;
+            background: #E6F6F4;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            padding: 36px 0;
+            background: var(--bg-white);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .trust-bar p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            opacity: 0.65;
+        }
+
+        .partner-logo {
+            font-family: 'Prompt', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--secondary);
+            letter-spacing: 0.04em;
+        }
+
+        /* Section Common */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .section-header h2 {
+            font-size: 2.15rem;
+            margin-bottom: 14px;
+        }
+
+        .section-header p {
+            color: var(--text-body);
+            font-size: 1.05rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 36px 30px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: var(--primary-light);
+            color: var(--primary-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+        }
+
+        .service-sub {
+            font-size: 0.9rem;
+            color: var(--primary-hover);
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-body);
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.92rem;
+            text-decoration: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit;
+        }
+
+        .service-link:hover {
+            color: var(--primary-hover);
+        }
+
+        /* Case Studies & Testimonials */
+        .bg-gray {
+            background-color: var(--bg-light);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-bottom: 48px;
+        }
+
+        .case-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .case-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-hover);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .case-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+        }
+
+        .case-result {
+            background: var(--bg-light);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary);
+            font-size: 0.92rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border: 1px solid var(--border-color);
+        }
+
+        .quote-text {
+            font-style: italic;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 0.98rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .client-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .client-meta h5 {
+            font-size: 0.95rem;
+            color: var(--secondary);
+        }
+
+        .client-meta span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: var(--secondary);
+            color: #FFFFFF;
+            padding: 72px 0;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            color: #FFFFFF;
+            font-size: 2.1rem;
+            margin-bottom: 14px;
+        }
+
+        .cta-banner p {
+            color: #CBD5E1;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1F2130;
+            color: #CBD5E1;
+            padding: 64px 0 32px;
+            font-size: 0.92rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.2fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo-box {
+            background: #FFFFFF;
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+        }
+
+        .footer h4 {
+            color: #FFFFFF;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .footer-list {
+            list-style: none;
+        }
+
+        .footer-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-list a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-list a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #94A3B8;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(27, 29, 43, 0.65);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #FFFFFF;
+            border-radius: var(--radius-lg);
+            max-width: 480px;
+            width: 100%;
+            padding: 32px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            animation: modalFadeIn 0.25s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-light);
+            color: var(--secondary);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: #E2E8F0;
+        }
+
+        /* Line QR Styling */
+        .line-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .line-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #06C755;
+            color: #FFFFFF;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .qr-frame {
+            background: #FFFFFF;
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            width: 230px;
+            height: 230px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .line-id-box {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .copy-btn {
+            background: var(--secondary);
+            color: #FFFFFF;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid, .services-grid, .cases-grid, .testimonials-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo-wrapper" aria-label="บริษัท เซคคันด์ไซท์ จำกัด">
+                <!-- Custom Vector Logo matching Second Sight Co., Ltd. -->
+                <svg width="215" height="62" viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="topArc" d="M 38,54 A 135,95 0 0,1 282,46" />
+                        <path id="bottomArc" d="M 55,82 A 145,95 0 0,0 288,68" />
+                    </defs>
+                    <!-- Grey Upper Swoosh -->
+                    <path d="M 36,78 C 32,32 165,12 268,48 C 175,24 66,46 66,82 C 66,92 38,90 36,78 Z" fill="#8C9196"/>
+                    <!-- Orange Lower Swoosh -->
+                    <path d="M 24,42 C 95,88 215,72 262,28 C 272,18 292,28 282,44 C 235,96 86,98 24,42 Z" fill="#F26F18"/>
+                    <!-- Thai Company Name -->
+                    <text font-family="'Prompt', sans-serif" font-size="20.5" font-weight="600" fill="#1E1E1E" letter-spacing="0.5">
+                        <textPath href="#topArc" startOffset="50%" text-anchor="middle">บริษัท เซคคันด์ไซท์ จำกัด</textPath>
+                    </text>
+                    <!-- English Company Name -->
+                    <text font-family="'Prompt', sans-serif" font-size="14.5" font-weight="500" fill="#1E1E1E" letter-spacing="3.5">
+                        <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">SECOND SIGHT CO., LTD.</textPath>
+                    </text>
+                </svg>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#home">หน้าแรก</a></li>
+                <li><a href="#services">บริการของเรา</a></li>
+                <li><a href="#cases">ผลงานและลูกค้า</a></li>
+                <li><a href="#contact">ติดต่อเรา</a></li>
+            </ul>
+
+            <button class="btn btn-primary btn-sm" onclick="openLineModal()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                </svg>
+                ติดต่อสอบถาม
+            </button>
+        </div>
+    </header>
+
+    <!-- Section 1: Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="badge-pill">
+                    <span>●</span> IT Consulting & System Integration Partner
+                </div>
+                <h1>ยกระดับโครงสร้างพื้นฐานไอที ให้ธุรกิจและองค์กรของคุณ<span>ก้าวไปข้างหน้าอย่างมั่นคง</span></h1>
+                <p>บริษัท เซคคันด์ไซท์ จำกัด ผู้เชี่ยวชาญด้านที่ปรึกษาไอที ออกแบบ ติดตั้ง และวางระบบ System Integration แบบครบวงจร ตอบโจทย์ทุกความต้องการของ SME และหน่วยงานภาครัฐ</p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openConsultModal()">ขอรับคำปรึกษาฟรี</button>
+                    <a href="#cases" class="btn btn-outline">ดูผลงานของเรา</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <p>ออกแบบตรงตามงบประมาณ</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>SME & Gov</h4>
+                        <p>รองรับมาตรฐานจัดซื้อจัดจ้างภาครัฐ</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>24/7</h4>
+                        <p>ทีมวิศวกรดูแลหลังการขาย (MA)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minimalist System Architecture Card -->
+            <div class="hero-visual">
+                <div class="diagram-header">
+                    <div class="dots"><span></span><span></span><span></span></div>
+                    <span style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted);">SYSTEM ARCHITECTURE OVERVIEW</span>
+                </div>
+
+                <div class="node-box">
+                    <div class="node-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <div class="node-info">
+                        <h5>Core Network & Server Infrastructure</h5>
+                        <span>ออกแบบโครงข่ายความเร็วสูงและระบบสำรองข้อมูล</span>
+                    </div>
+                    <span class="status-badge">Active</span>
+                </div>
+
+                <div class="node-box">
+                    <div class="node-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div class="node-info">
+                        <h5>Cybersecurity & PDPA Compliance</h5>
+                        <span>ระบบ Firewall และความปลอดภัยข้อมูลระดับองค์กร</span>
+                    </div>
+                    <span class="status-badge">Protected</span>
+                </div>
+
+                <div class="node-box" style="margin-bottom: 0;">
+                    <div class="node-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="node-info">
+                        <h5>Preventive Maintenance (MA)</h5>
+                        <span>ตรวจสอบและบำรุงรักษาระบบเชิงป้องกันโดยผู้เชี่ยวชาญ</span>
+                    </div>
+                    <span class="status-badge">99.9% SLA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-bar">
+        <div class="container">
+            <p>พันธมิตรเทคโนโลยีและมาตรฐานอุปกรณ์ระดับสากล</p>
+            <div class="partners-grid">
+                <span class="partner-logo">CISCO</span>
+                <span class="partner-logo">DELL Technologies</span>
+                <span class="partner-logo">FORTINET</span>
+                <span class="partner-logo">Microsoft</span>
+                <span class="partner-logo">HPE</span>
+                <span class="partner-logo">Synology</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Core Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>บริการครบวงจร เพื่อประสิทธิภาพสูงสุดขององค์กร</h2>
+                <p>เราดูแลตั้งแต่การสำรวจหน้างาน วางแผน ออกแบบ จัดหาอุปกรณ์ ไปจนถึงการติดตั้งและบำรุงรักษา</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <h3>1. IT Consulting & Solution Design</h3>
+                    <div class="service-sub">บริการให้คำปรึกษาและออกแบบระบบไอที</div>
+                    <p>วิเคราะห์ปัญหาและวางแผนโครงสร้างพื้นฐานด้านไอทีให้เหมาะสมกับงบประมาณและขนาดองค์กร ช่วยลดต้นทุนแฝงและเพิ่มความคล่องตัวในการทำงาน</p>
+                    <button class="service-link" onclick="openServiceDetail(1)">รายละเอียดเพิ่มเติม →</button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>2. System Integration & Installation</h3>
+                    <div class="service-sub">บริการติดตั้งและเชื่อมโยงระบบครบวงจร</div>
+                    <p>ออกแบบและติดตั้งระบบเครือข่าย (Network), Server, Cloud และระบบความปลอดภัยทางไซเบอร์ เชื่อมต่อทุกระบบให้ทำงานร่วมกันอย่างราบรื่น</p>
+                    <button class="service-link" onclick="openServiceDetail(2)">รายละเอียดเพิ่มเติม →</button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <h3>3. Hardware Procurement & Maintenance</h3>
+                    <div class="service-sub">จัดจำหน่ายอุปกรณ์และดูแลบำรุงรักษา</div>
+                    <p>จัดหาอุปกรณ์ไอทีมาตรฐานระดับองค์กร พร้อมบริการดูแลหลังการขาย (MA) โดยทีมวิศวกรผู้เชี่ยวชาญ มั่นใจได้ในความต่อเนื่องของธุรกิจ</p>
+                    <button class="service-link" onclick="openServiceDetail(3)">รายละเอียดเพิ่มเติม →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Case Studies & Testimonials -->
+    <section id="cases" class="bg-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2>ความไว้วางใจจากองค์กรชั้นนำและธุรกิจ SME</h2>
+                <p>ตัวอย่างผลงานการออกแบบและติดตั้งระบบจริงที่ช่วยยกระดับการทำงานให้กับลูกค้าของเรา</p>
+            </div>
+
+            <div class="cases-grid">
+                <div class="case-card">
+                    <span class="case-tag">ธุรกิจโลจิสติกส์และคลังสินค้า (SME)</span>
+                    <h3>ปรับปรุงระบบเครือข่ายและเชื่อมโยงฐานข้อมูลสาขา (System Integration)</h3>
+                    <p style="margin-bottom: 16px; font-size: 0.95rem;">ออกแบบโครงข่าย VPN เชื่อมต่อสำนักงานใหญ่และคลังสินค้า 4 แห่ง พร้อมติดตั้งระบบ Central Storage และ Backup อัตโนมัติ</p>
+                    <div class="case-result">
+                        <strong>ผลลัพธ์ที่ได้:</strong> ลดความล่าช้าในการรับ-ส่งข้อมูลระหว่างสาขาได้ 60% พร้อมระบบสำรองข้อมูลอัตโนมัติ ป้องกันข้อมูลสูญหาย 100%
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <span class="case-tag">หน่วยงานราชการส่วนท้องถิ่น</span>
+                    <h3>ออกแบบและติดตั้งระบบความปลอดภัยเครือข่ายและห้อง Data Center</h3>
+                    <p style="margin-bottom: 16px; font-size: 0.95rem;">ปรับปรุงระบบโครงข่ายภายในอาคาร ติดตั้ง Next-Gen Firewall และจัดทำระบบจัดเก็บ Log ตาม พ.ร.บ. คอมพิวเตอร์ฯ</p>
+                    <div class="case-result">
+                        <strong>ผลลัพธ์ที่ได้:</strong> ยกระดับมาตรฐานความปลอดภัยข้อมูลให้สอดคล้องกับ PDPA และรองรับผู้ใช้งานพร้อมกันกว่า 500 คนได้อย่างเสถียร
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="quote-text">"ทีมงานเซคคันด์ไซท์ให้คำปรึกษาตรงจุดมากครับ ไม่พยายามขายของเกินความจำเป็น ช่วยออกแบบระบบใหม่ที่ประหยัดงบประมาณบริษัทไปได้เยอะ และใช้งานได้จริง"</p>
+                    <div class="client-info">
+                        <div class="client-avatar">ธว</div>
+                        <div class="client-meta">
+                            <h5>คุณธนากร วัฒนากูล</h5>
+                            <span>กรรมการผู้จัดการ บริษัท ขนส่งไทยรุ่งเรือง จำกัด</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="quote-text">"ประทับใจความรวดเร็วในการติดตั้งและการดูแลหลังการขายครับ เอกสารประกอบการจัดซื้อจัดจ้างครบถ้วนตามระเบียบราชการ ทำงานร่วมกันได้ราบรื่นมาก"</p>
+                    <div class="client-info">
+                        <div class="client-avatar">สจ</div>
+                        <div class="client-meta">
+                            <h5>คุณสมชาย ใจดี</h5>
+                            <span>หัวหน้าฝ่ายเทคโนโลยีสารสนเทศ (หน่วยงานภาครัฐ)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>พร้อมเริ่มต้นวางระบบไอทีที่ใช่สำหรับองค์กรของคุณหรือยัง?</h2>
+            <p>ปรึกษาทีมวิศวกรของ บริษัท เซคคันด์ไซท์ จำกัด เพื่อประเมินหน้างานและออกแบบโซลูชันที่คุ้มค่าที่สุดโดยไม่มีค่าใช้จ่าย</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="openConsultModal()">ขอรับคำปรึกษาฟรี</button>
+                <button class="btn btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;" onclick="openLineModal()">แอด LINE สอบถามทันที</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo-box">
+                        <svg width="195" height="56" viewBox="0 0 320 110" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <path id="topArcFooter" d="M 38,54 A 135,95 0 0,1 282,46" />
+                                <path id="bottomArcFooter" d="M 55,82 A 145,95 0 0,0 288,68" />
+                            </defs>
+                            <path d="M 36,78 C 32,32 165,12 268,48 C 175,24 66,46 66,82 C 66,92 38,90 36,78 Z" fill="#8C9196"/>
+                            <path d="M 24,42 C 95,88 215,72 262,28 C 272,18 292,28 282,44 C 235,96 86,98 24,42 Z" fill="#F26F18"/>
+                            <text font-family="'Prompt', sans-serif" font-size="20.5" font-weight="600" fill="#1E1E1E" letter-spacing="0.5">
+                                <textPath href="#topArcFooter" startOffset="50%" text-anchor="middle">บริษัท เซคคันด์ไซท์ จำกัด</textPath>
+                            </text>
+                            <text font-family="'Prompt', sans-serif" font-size="14.5" font-weight="500" fill="#1E1E1E" letter-spacing="3.5">
+                                <textPath href="#bottomArcFooter" startOffset="50%" text-anchor="middle">SECOND SIGHT CO., LTD.</textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <p style="color: #94A3B8; max-width: 340px;">ผู้เชี่ยวชาญด้านที่ปรึกษาไอที จำหน่าย ออกแบบ ติดตั้ง และวางระบบ System Integration ครบวงจรสำหรับธุรกิจ SME และหน่วยงานราชการ</p>
+                </div>
+
+                <div>
+                    <h4>บริการของเรา</h4>
+                    <ul class="footer-list">
+                        <li><a href="#services">IT Consulting & Solution Design</a></li>
+                        <li><a href="#services">System Integration & Installation</a></li>
+                        <li><a href="#services">Hardware & Network Procurement</a></li>
+                        <li><a href="#services">Preventive Maintenance (MA)</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>ข้อมูลติดต่อ</h4>
+                    <ul class="footer-list">
+                        <li>
+                            <span>📍</span>
+                            <span>5/4 หมู่ที่ 2 ต.ดาวเรือง อ.เมือง จ.สระบุรี 18000</span>
+                        </li>
+                        <li>
+                            <span>📞</span>
+                            <a href="tel:0812334455">081-233-4455 (ฝ่ายขายและที่ปรึกษา)</a>
+                        </li>
+                        <li>
+                            <span>✉️</span>
+                            <a href="mailto:info@2ndsight.co.th">info@2ndsight.co.th</a>
+                        </li>
+                        <li>
+                            <span>💬</span>
+                            <a href="javascript:void(0)" onclick="openLineModal()" style="color: var(--primary); font-weight: 500;">Line : 0812334455 (คลิกสแกน QR Code)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2026 บริษัท เซคคันด์ไซท์ จำกัด (Second Sight Co., Ltd.) สงวนลิขสิทธิ์</span>
+                <span>นโยบายความเป็นส่วนตัว (PDPA)</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal 1: Add LINE QR Code -->
+    <div id="lineModal" class="modal-overlay" onclick="closeModalOnBg(event, 'lineModal')">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('lineModal')">×</button>
+            <div class="line-header">
+                <div class="line-badge">LINE Official / ฝ่ายขายและที่ปรึกษา</div>
+                <h3>สแกน QR Code เพื่อติดต่อสอบถาม</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">บริษัท เซคคันด์ไซท์ จำกัด ยินดีให้คำปรึกษา</p>
+            </div>
+
+            <div class="qr-frame">
+                <!-- Clean Crisp QR Code Vector pointing to LINE ID 0812334455 -->
+                <svg width="185" height="185" viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+                    <rect width="29" height="29" fill="#FFFFFF"/>
+                    <!-- Top-Left Finder -->
+                    <path d="M2,2 h7 v7 h-7 z M3,3 v5 h5 v-5 z M4,4 h3 v3 h-3 z" fill="#1E1E1E"/>
+                    <!-- Top-Right Finder -->
+                    <path d="M20,2 h7 v7 h-7 z M21,3 v5 h5 v-5 z M22,4 h3 v3 h-3 z" fill="#1E1E1E"/>
+                    <!-- Bottom-Left Finder -->
+                    <path d="M2,20 h7 v7 h-7 z M3,21 v5 h5 v-5 z M4,22 h3 v3 h-3 z" fill="#1E1E1E"/>
+                    <!-- Data Modules -->
+                    <path d="M11,2 h2 v2 h-2 z M15,2 h3 v1 h-3 z M10,4 h1 v3 h-1 z M13,5 h2 v2 h-2 z M17,4 h1 v4 h-1 z
+                             M2,11 h3 v1 h-3 z M7,10 h2 v3 h-2 z M11,10 h4 v2 h-4 z M17,11 h2 v2 h-2 z M21,10 h3 v1 h-3 z M26,11 h1 v3 h-1 z
+                             M3,14 h2 v3 h-2 z M7,15 h1 v2 h-1 z M10,14 h2 v2 h-2 z M17,14 h3 v2 h-3 z M22,14 h2 v3 h-2 z M25,16 h2 v1 h-2 z
+                             M11,18 h2 v3 h-2 z M15,18 h2 v1 h-2 z M19,18 h3 v2 h-3 z M24,19 h3 v2 h-3 z
+                             M10,22 h3 v2 h-3 z M15,21 h2 v3 h-2 z M19,22 h2 v2 h-2 z M23,23 h4 v2 h-4 z M11,26 h4 v1 h-4 z M18,25 h3 v2 h-3 z M25,26 h2 v1 h-2 z" fill="#1E1E1E"/>
+                    <!-- Center LINE Accent Badge -->
+                    <rect x="11.5" y="11.5" width="6" height="6" rx="1.2" fill="#06C755"/>
+                    <text x="14.5" y="15.3" font-family="sans-serif" font-size="2.3" font-weight="bold" fill="#FFFFFF" text-anchor="middle">LINE</text>
+                </svg>
+            </div>
+
+            <div class="line-id-box">
+                <div>
+                    <div style="font-size: 0.78rem; color: var(--text-muted);">LINE ID / เบอร์โทรศัพท์</div>
+                    <strong id="lineIdText" style="font-size: 1.05rem; color: var(--secondary);">0812334455</strong>
+                </div>
+                <button class="copy-btn" id="copyLineBtn" onclick="copyLineId()">คัดลอกไอดี</button>
+            </div>
+
+            <div style="text-align: center; font-size: 0.85rem; color: var(--text-body);">
+                หรือโทรติดต่อโดยตรง: <a href="tel:0812334455" style="color: var(--primary-hover); font-weight: 600; text-decoration: none;">081-233-4455</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Free Consultation Form -->
+    <div id="consultModal" class="modal-overlay" onclick="closeModalOnBg(event, 'consultModal')">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('consultModal')">×</button>
+            <h3 style="margin-bottom: 6px;">ขอรับคำปรึกษาฟรี</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">กรอกข้อมูลเบื้องต้นเพื่อให้ทีมวิศวกรติดต่อกลับภายใน 24 ชั่วโมง</p>
+
+            <form id="consultForm" onsubmit="submitConsultForm(event)">
+                <div class="form-group">
+                    <label>ประเภทองค์กร *</label>
+                    <select class="form-control" required>
+                        <option value="SME">ธุรกิจ SME / บริษัทเอกชน</option>
+                        <option value="GOV">หน่วยงานราชการ / รัฐวิสาหกิจ / อปท.</option>
+                        <option value="OTHER">อื่นๆ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>ชื่อผู้ติดต่อ / ชื่อหน่วยงาน *</label>
+                    <input type="text" class="form-control" placeholder="ระบุชื่อของคุณหรือองค์กร" required>
+                </div>
+                <div class="form-group">
+                    <label>เบอร์โทรศัพท์ หรือ LINE ID *</label>
+                    <input type="text" class="form-control" placeholder="เช่น 081-xxx-xxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>รายละเอียดงานที่ต้องการปรึกษา</label>
+                    <textarea class="form-control" rows="3" placeholder="เช่น วางระบบ Network, จัดหาอุปกรณ์, ระบบความปลอดภัย, ขอใบเสนอราคา..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">ส่งข้อมูลขอรับคำปรึกษา</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 3: Service Detail -->
+    <div id="serviceModal" class="modal-overlay" onclick="closeModalOnBg(event, 'serviceModal')">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('serviceModal')">×</button>
+            <span class="case-tag" id="serviceModalTag">ขอบเขตการให้บริการ</span>
+            <h3 id="serviceModalTitle" style="margin-bottom: 12px;"></h3>
+            <ul id="serviceModalList" style="padding-left: 20px; margin-bottom: 24px; color: var(--text-body); font-size: 0.95rem;"></ul>
+            <button class="btn btn-primary" style="width: 100%;" onclick="closeModal('serviceModal'); openLineModal();">สอบถามรายละเอียดบริการนี้ทาง LINE</button>
+        </div>
+    </div>
+
+    <script>
+        function openLineModal() {
+            document.getElementById('lineModal').classList.add('active');
+        }
+
+        function openConsultModal() {
+            document.getElementById('consultModal').classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function closeModalOnBg(event, id) {
+            if (event.target.id === id) {
+                closeModal(id);
+            }
+        }
+
+        function copyLineId() {
+            const lineId = document.getElementById('lineIdText').innerText;
+            navigator.clipboard.writeText(lineId).then(() => {
+                const btn = document.getElementById('copyLineBtn');
+                btn.innerText = 'คัดลอกแล้ว ✓';
+                btn.style.background = '#06C755';
+                setTimeout(() => {
+                    btn.innerText = 'คัดลอกไอดี';
+                    btn.style.background = '';
+                }, 2000);
+            });
+        }
+
+        function submitConsultForm(e) {
+            e.preventDefault();
+            alert('ขอบคุณครับ! บริษัท เซคคันด์ไซท์ จำกัด ได้รับข้อมูลของคุณแล้ว ทีมที่ปรึกษาจะรีบติดต่อกลับโดยเร็วที่สุด');
+            closeModal('consultModal');
+            e.target.reset();
+        }
+
+        const serviceDetails = {
+            1: {
+                title: 'IT Consulting & Solution Design',
+                items: [
+                    'สำรวจหน้างาน (Site Survey) และวิเคราะห์ความต้องการเชิงลึกขององค์กร',
+                    'ออกแบบสถาปัตยกรรมระบบเครือข่าย (Network Diagram) และระบบแม่ข่าย',
+                    'ให้คำปรึกษาการจัดทำงบประมาณและสเปคอุปกรณ์ (TOR) สำหรับหน่วยงานภาครัฐและเอกชน',
+                    'วางแผนการปรับปรุงระบบเดิม (System Modernization) เพื่อลดค่าใช้จ่ายระยะยาว'
+                ]
+            },
+            2: {
+                title: 'System Integration & Installation',
+                items: [
+                    'ติดตั้งและตั้งค่าระบบเครือข่าย LAN / Wi-Fi ระดับองค์กร และระบบ VPN เชื่อมต่อสาขา',
+                    'ติดตั้งระบบ Server, Virtualization และระบบสำรองข้อมูล (Backup & Disaster Recovery)',
+                    'ติดตั้งระบบความปลอดภัยทางไซเบอร์ Next-Gen Firewall และระบบจัดเก็บ Log ตามกฎหมาย',
+                    'ทดสอบระบบ (UAT) พร้อมจัดทำคู่มือการใช้งานและอบรมเจ้าหน้าที่ผู้ดูแลระบบ'
+                ]
+            },
+            3: {
+                title: 'Hardware Procurement & Maintenance',
+                items: [
+                    'จัดจำหน่ายอุปกรณ์ไอทีลิขสิทธิ์แท้ (Server, Switch, Firewall, PC, UPS) จากแบรนด์ชั้นนำ',
+                    'บริการดูแลบำรุงรักษาระบบรายปี (Preventive & Corrective Maintenance - MA)',
+                    'บริการตรวจสอบสุขภาพระบบ (Health Check) เป็นประจำทุกไตรมาส',
+                    'มีทีมวิศวกรพร้อมเข้าแก้ไขปัญหาหน้างาน (On-site Support) ในพื้นที่สระบุรีและทั่วประเทศ'
+                ]
+            }
+        };
+
+        function openServiceDetail(num) {
+            const data = serviceDetails[num];
+            document.getElementById('serviceModalTitle').innerText = data.title;
+            const listEl = document.getElementById('serviceModalList');
+            listEl.innerHTML = data.items.map(item => `<li style="margin-bottom: 8px;">${item}</li>`).join('');
+            document.getElementById('serviceModal').classList.add('active');
+        }
+    </script>
+</body>
+</html>
